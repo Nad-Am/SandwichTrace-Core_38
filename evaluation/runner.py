@@ -41,12 +41,16 @@ class EvaluationRunner:
         self.service = service or DetectionService()
 
     def evaluate_fixtures(self, fixture_paths: Iterable[str | Path]) -> EvaluationReport:
+        paths = list(fixture_paths)
+        if not paths:
+            raise ValueError("no fixtures found for evaluation")
+
         results: list[FixtureEvaluation] = []
         total_tp = 0
         total_fp = 0
         total_fn = 0
 
-        for fixture_path in fixture_paths:
+        for fixture_path in paths:
             fixture = load_fixture(fixture_path)
             result = self.evaluate_fixture(fixture)
             results.append(result)

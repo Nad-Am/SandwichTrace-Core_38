@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import pytest
+
 from evaluation.metrics import compare_attack_sets, metrics_from_counts
 from evaluation.runner import EvaluationRunner
 
@@ -43,4 +45,9 @@ def test_evaluation_runner_reaches_full_recall_on_curated_fixtures() -> None:
     assert report.metrics.precision == 1.0
     assert report.metrics.recall == 1.0
     assert report.metrics.f1 == 1.0
+
+
+def test_evaluation_runner_rejects_empty_fixture_set() -> None:
+    with pytest.raises(ValueError, match="no fixtures found"):
+        EvaluationRunner().evaluate_fixtures([])
 

@@ -26,8 +26,11 @@ jobs:
       - name: Run tests
         run: python -m pytest
 
-      - name: Run CLI smoke test
+      - name: Run CLI replay smoke test
         run: >-
           python cli.py replay
           --fixture dataset/fixtures/attacks/attack_standard.json
+
+      - name: Run CLI evaluate smoke test
+        run: python cli.py evaluate --dataset dataset
 
