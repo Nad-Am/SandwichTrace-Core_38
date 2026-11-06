@@ -1,0 +1,2 @@
+"""SandwichTrace detection core."""
+

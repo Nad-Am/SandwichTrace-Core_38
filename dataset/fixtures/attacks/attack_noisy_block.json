@@ -1,0 +1,107 @@
+{
+  "fixture_id": "attack_noisy_block",
+  "description": "A-B-C sandwich separated by an unrelated transfer and another pool swap.",
+  "input": {
+    "block": {
+      "block_number": 1001,
+      "block_hash": "0xblock-1001"
+    },
+    "transactions": [
+      {
+        "tx_hash": "0xa2",
+        "from_address": "0x1111111111111111111111111111111111111111",
+        "to_address": "0x00000000000000000000000000000000000000e5",
+        "tx_index": 1,
+        "status": 1
+      },
+      {
+        "tx_hash": "0xnoise1",
+        "from_address": "0x5555555555555555555555555555555555555555",
+        "to_address": "0x6666666666666666666666666666666666666666",
+        "tx_index": 2,
+        "status": 1
+      },
+      {
+        "tx_hash": "0xb2",
+        "from_address": "0x2222222222222222222222222222222222222222",
+        "to_address": "0x00000000000000000000000000000000000000e5",
+        "tx_index": 3,
+        "status": 1
+      },
+      {
+        "tx_hash": "0xnoise2",
+        "from_address": "0x7777777777777777777777777777777777777777",
+        "to_address": "0x00000000000000000000000000000000000000e5",
+        "tx_index": 4,
+        "status": 1
+      },
+      {
+        "tx_hash": "0xc2",
+        "from_address": "0x1111111111111111111111111111111111111111",
+        "to_address": "0x00000000000000000000000000000000000000e5",
+        "tx_index": 5,
+        "status": 1
+      }
+    ],
+    "swap_events": [
+      {
+        "pool_address": "0x00000000000000000000000000000000000000c3",
+        "token_in": "0x00000000000000000000000000000000000000a1",
+        "token_out": "0x00000000000000000000000000000000000000b2",
+        "amount_in": 100,
+        "amount_out": 1000,
+        "tx_hash": "0xa2",
+        "block_number": 1001,
+        "tx_index": 1,
+        "log_index": 0
+      },
+      {
+        "pool_address": "0x00000000000000000000000000000000000000c3",
+        "token_in": "0x00000000000000000000000000000000000000a1",
+        "token_out": "0x00000000000000000000000000000000000000b2",
+        "amount_in": 200,
+        "amount_out": 1800,
+        "tx_hash": "0xb2",
+        "block_number": 1001,
+        "tx_index": 3,
+        "log_index": 0
+      },
+      {
+        "pool_address": "0x00000000000000000000000000000000000000d4",
+        "token_in": "0x00000000000000000000000000000000000000a1",
+        "token_out": "0x00000000000000000000000000000000000000b2",
+        "amount_in": 50,
+        "amount_out": 400,
+        "tx_hash": "0xnoise2",
+        "block_number": 1001,
+        "tx_index": 4,
+        "log_index": 0
+      },
+      {
+        "pool_address": "0x00000000000000000000000000000000000000c3",
+        "token_in": "0x00000000000000000000000000000000000000b2",
+        "token_out": "0x00000000000000000000000000000000000000a1",
+        "amount_in": 1000,
+        "amount_out": 125,
+        "tx_hash": "0xc2",
+        "block_number": 1001,
+        "tx_index": 5,
+        "log_index": 0
+      }
+    ],
+    "pool_snapshots": []
+  },
+  "ground_truth": {
+    "expected_matches": [
+      {
+        "pool_address": "0x00000000000000000000000000000000000000c3",
+        "attacker": "0x1111111111111111111111111111111111111111",
+        "victim": "0x2222222222222222222222222222222222222222",
+        "front_tx_hash": "0xa2",
+        "victim_tx_hash": "0xb2",
+        "back_tx_hash": "0xc2"
+      }
+    ]
+  }
+}
+
