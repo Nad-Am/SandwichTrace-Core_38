@@ -1,0 +1,29 @@
+name: Feature request
+description: Propose a scoped extension to the offline detection core.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What missing capability or limitation should be addressed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed scope
+      description: Explain whether this belongs to the MVP or a later milestone.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: Test approach
+      description: Describe the fixtures and negative cases that would prove the change.
+    validations:
+      required: true
+
