@@ -1,0 +1,14 @@
+{
+  "fixtures": [
+    "fixtures/attacks/attack_standard.json",
+    "fixtures/attacks/attack_noisy_block.json",
+    "fixtures/attacks/attack_multiple_pools.json",
+    "fixtures/normal/normal_no_victim.json",
+    "fixtures/boundary/wrong_order.json",
+    "fixtures/boundary/different_pool_victim.json",
+    "fixtures/boundary/no_gross_profit.json",
+    "fixtures/boundary/same_actor_victim.json",
+    "fixtures/boundary/wrong_victim_direction.json"
+  ]
+}
+
