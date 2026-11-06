@@ -2,8 +2,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-green.svg)](https://www.python.org/)
-[![Tests: 33 Passed](https://img.shields.io/badge/Tests-33%20Passed-success.svg)]()
-[![Type Checking: Strict](https://img.shields.io/badge/Typing-Pydantic_V2-blueviolet.svg)]()
+[![Tests: 45 Passed](https://img.shields.io/badge/Tests-45%20Passed-success.svg)]()
 
 > [English](#english) | [中文说明](#中文说明)
 
@@ -20,7 +19,7 @@ Designed under a layered modular architecture with strict typed data contracts, 
 
 ### Key Features
 
-- **Pure & Lightweight**: 100% Python implementation with zero dependency on live RPC nodes or external databases. Replays and verifies JSON fixtures in $<5\text{ms}$.
+- **Pure & Lightweight**: 100% Python implementation with zero dependency on live RPC nodes or external databases. Replays and verifies local JSON fixtures without network access.
 - **Deterministic Pipeline**: Evaluates candidate triplets strictly based on intra-block execution order ($A < B < C$), single-pool invariants, opposite trade directions, actor relationship, and positive Quote Token gross profit signals.
 - **Typed Data Contracts**: Robust schema definitions built upon Pydantic V2 (`Transaction`, `SwapEvent`, `DetectionInput`, `SandwichMatch`), ensuring contract-first data flow.
 - **Built-in Benchmark & Evaluation**: Includes 9 offline scenarios across typical attacks, benign swaps, and boundary edge cases with automated Precision, Recall, and F1-score evaluation.
@@ -52,7 +51,7 @@ python cli.py evaluate --manifest dataset/manifest.json
 ```bash
 python -m pytest
 ```
-*Current test suite contains 33 unit and integration tests covering contracts validation, dataset assembly, candidate filtering, non-adjacent matching, false-positive boundaries, engine execution, metrics, and CLI workflows.*
+*Current test suite contains 45 unit and integration tests covering contracts validation, dataset assembly, candidate filtering, non-adjacent matching, false-positive boundaries, engine execution, metrics, and CLI workflows.*
 
 ### Scope & Boundaries (MVP)
 
@@ -70,7 +69,7 @@ python -m pytest
 | [`docs/03_SCOPE_AND_BOUNDARIES.md`](./docs/03_SCOPE_AND_BOUNDARIES.md) | **Scope & Boundaries**: MVP supported features vs. deferred roadmap boundaries | Current Core Spec |
 | [`docs/04_DATA_CONTRACTS.md`](./docs/04_DATA_CONTRACTS.md) | **Data Contracts**: Pydantic schema models, field constraints, and structures | Current Core Spec |
 | [`docs/05_DETECTION_RULES.md`](./docs/05_DETECTION_RULES.md) | **Detection Rules**: 9 core criteria, profit calculation, and benchmark metrics | Current Core Spec |
-| [`STRATEGIC_ANALYSIS.md`](./STRATEGIC_ANALYSIS.md) | **Strategic Analysis**: Huawei "5-Looks & 3-Determines" strategic positioning & roadmap | Course & Project Plan |
+| [`STRATEGIC_ANALYSIS.md`](./STRATEGIC_ANALYSIS.md) | **Strategic Analysis**: Project positioning, competitive boundaries, and roadmap | Project Roadmap |
 
 ---
 
@@ -85,7 +84,7 @@ python -m pytest
 
 ### 核心特性
 
-- **轻量纯粹**：纯 Python 实现，零以太坊节点 RPC 依赖，直接离线回放测试固件，单次检测耗时 $<5\text{ms}$。
+- **轻量纯粹**：纯 Python 实现，零以太坊节点 RPC 依赖，可直接离线回放测试固件。
 - **确定性判定流水线**：严格按区块内执行顺序（$A < B < C$）、同池约束、发起者对冲关系、交易方向与 Quote Token 毛收益信号进行综合裁决。
 - **强类型数据契约**：基于 Pydantic V2 构建统一的数据模型（`Transaction`、`SwapEvent`、`DetectionInput`、`SandwichMatch`），保证数据流转规范。
 - **内置基准评测体系**：内置 9 个覆盖攻击、正常 Swap 与边界异常的离线固件，支持自动化 Precision / Recall / F1-Score 评测。
@@ -117,7 +116,7 @@ python cli.py evaluate --manifest dataset/manifest.json
 ```bash
 python -m pytest
 ```
-*当前测试集包含 33 个单元与集成测试，覆盖契约校验、数据装配、候选筛选、非连续三联体匹配、误报边界、检测引擎、评测指标与 CLI。*
+*当前测试集包含 45 个单元与集成测试，覆盖契约校验、数据装配、候选筛选、非连续三联体匹配、误报边界、检测引擎、评测指标与 CLI。*
 
 ### 当前能力边界（MVP）
 
@@ -137,7 +136,7 @@ python -m pytest
 | [`docs/03_SCOPE_AND_BOUNDARIES.md`](./docs/03_SCOPE_AND_BOUNDARIES.md) | **范围与边界**：当前 MVP 做什么、不做什么？与后续全栈演进的刚性边界隔离 | 当前 Core 规格 |
 | [`docs/04_DATA_CONTRACTS.md`](./docs/04_DATA_CONTRACTS.md) | **数据契约**：模块间传递什么数据？强类型 Pydantic 模型与字段约束 | 当前 Core 规格 |
 | [`docs/05_DETECTION_RULES.md`](./docs/05_DETECTION_RULES.md) | **检测规则**：如何判定攻击？9 项核心条件、毛收益信号口径与评测标准 | 当前 Core 规格 |
-| [`STRATEGIC_ANALYSIS.md`](./STRATEGIC_ANALYSIS.md) | **项目战略分析**：华为“五看三定”行业洞察、竞争壁垒、战略控制点与演进路线 | 结课考核项(5) |
+| [`STRATEGIC_ANALYSIS.md`](./STRATEGIC_ANALYSIS.md) | **项目战略分析**：行业洞察、竞争壁垒、战略控制点与演进路线 | 项目发展规划 |
 
 ---
 
