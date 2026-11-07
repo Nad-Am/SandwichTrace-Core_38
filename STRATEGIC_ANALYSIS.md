@@ -1,17 +1,83 @@
-# SandwichTrace-Core_38 项目战略分析
+# SandwichTrace-Core_38 Strategic Analysis / 项目战略分析
 
-本文分析 SandwichTrace-Core_38 的行业生态定位、竞争壁垒与中长期开源发展路径。
+> [English](#english) | [简体中文](#简体中文)
 
 ---
 
-## 一、 战略洞察
+<a name="english"></a>
+## English
 
-### 1. 看行业 / 趋势（Industry & Trends）
+This document analyzes the industry positioning, competitive boundaries, strategic control points, and long-term open-source roadmap of `SandwichTrace-Core_38` using the **Five-Looks & Three-Determines (五看三定)** strategic framework.
+
+### I. Strategic Insights (Five Looks)
+
+#### 1. Look at Industry & Trends
+- **Macro Trend**: As decentralized exchange (DEX) volume across Ethereum and Layer-2 networks scales, Maximal Extractable Value (MEV)—particularly AMM sandwich attacks—acts as a persistent structural tax on on-chain liquidity.
+- **Compliance & Auditing Demand**: Web3 security auditing and regulatory forensics are shifting from probabilistic heuristics toward deterministic, reproducible post-hoc evidence chains.
+- **Open-Source Gap**: While blockchain state is transparent, MEV detection and benchmark evaluation remain heavily centralized within proprietary SaaS platforms, leaving the open-source ecosystem short of lightweight, contract-first evaluation benchmarks.
+
+#### 2. Look at Market & Customers
+- **Target Users**:
+  1. **Academic & Security Researchers**: Require zero-cost, standardized, reproducible offline benchmarks for blockchain security and algorithmic finance research.
+  2. **DeFi Security & Audit Teams**: Need low-overhead, embeddable detection kernels that run inside CI/CD pipelines without expensive archival nodes.
+  3. **Traders & Protocol Analysts**: Perform post-hoc slippage forensics on historical blocks.
+- **Core Pain Points**:
+  - High infrastructure cost of maintaining Ethereum Archive Nodes and Trace RPCs;
+  - Opaque, black-box proprietary detection rules that cannot serve as verifiable audit baselines.
+
+#### 3. Look at Competition
+
+| Dimension | Flashbots (Protect) | EigenPhi / TokenFlow | `SandwichTrace-Core_38` |
+| :--- | :--- | :--- | :--- |
+| **Operating Phase** | Pre-execution (Mempool private routing) | Post-execution (Commercial real-time analytics) | **Post-execution (Deterministic offline forensics & benchmark)** |
+| **Deployment Cost** | Relies on private relay infrastructure | Commercial SaaS subscription | **Zero external infrastructure; standalone Python replay** |
+| **Open-Source Model** | Partially open / infrastructure-bound | Proprietary closed-source | **100% Open Source (Apache-2.0)** |
+| **Strategic Focus** | Block building & orderflow protection | Full-chain indexing & web dashboards | **Lightweight, embeddable, typed-contract benchmark kernel** |
+
+#### 4. Look at Self (SWOT)
+- **Strengths**:
+  - **Zero-Dependency Reproducibility**: Replays curated JSON fixtures offline without RPC or database setup;
+  - **Strict 6-Layer Decoupling**: Pure `core/` detection pipeline isolated from `dataset/` I/O and `evaluation/` ground truth;
+  - **Typed Contracts**: Pydantic V2 schemas enforcing exact integer token accounting.
+- **Weaknesses (Current MVP Boundaries)**:
+  - Scoped to single-pool, single-hop, shared-EOA triplets within a single block;
+  - Post-hoc offline evaluation only (no live Mempool interception).
+
+#### 5. Look at Opportunities
+- **Ecosystem Opportunity**: Fill the gap for a well-documented, test-driven open-source sandwich detection benchmark.
+- **Integration Opportunity**: Serve as a pluggable core engine for Python Web3 analytics, backtesting suites, and full-stack auditing platforms.
+
+### II. Strategic Formulation (Three Determines)
+
+#### 1. Determine Strategic Control Points
+- **Control Point 1: Curated Multi-Scenario Benchmark Dataset** — Maintain labeled fixtures spanning canonical attacks, noisy blocks, multi-pool independence, and false-positive boundary cases.
+- **Control Point 2: Deterministic Evidence Contract Specification** — Standardize `Block -> Transaction -> SwapEvent -> SandwichMatch` schemas and raw Quote Token gross profit accounting.
+
+#### 2. Determine Goals
+- **Short-Term (Current MVP)**: Deliver the 6-layer Python core, 9 curated fixtures, CLI workflows (`replay` / `evaluate`), 45 automated tests, and bilingual documentation.
+- **Mid-Term (Year 1)**: Expand real-world mainnet fixture coverage, publish as a standalone PyPI package, and grow community dataset contributions.
+- **Long-Term (Year 2+)**: Evolve into a full-stack on-chain auditing platform with live RPC adapters, Reorg state machine recovery, and interactive forensic dashboards.
+
+#### 3. Determine Strategies
+- **Strategy 1 (TDD & Core Isolation)**: Keep `core/` 100% pure and free of external I/O or Ground Truth coupling.
+- **Strategy 2 (Open-Source RFC & Dataset Co-Building)**: Enable community contributors to submit new MEV edge-case fixtures via standardized PR templates.
+- **Strategy 3 (Evolutionary Decoupling)**: Preserve the standalone core so future RPC ingestion, FastAPI services, and frontends attach strictly as outer adapters.
+
+---
+
+<a name="简体中文"></a>
+## 简体中文
+
+本文采用华为 **“五看三定”** 战略分析模型，分析 `SandwichTrace-Core_38` 的行业生态定位、竞争壁垒与中长期开源发展路径。
+
+### 一、 战略洞察（五看）
+
+#### 1. 看行业 / 趋势（Industry & Trends）
 * **宏观趋势**：随着以太坊及 L2 去中心化交易（DEX）规模持续攀升，基于 AMM 机制的最大可提取价值（MEV，尤其是三明治攻击）已成为常态化的链上流动性“隐形税收”，年均掠夺金额达数亿美元。
 * **监管与合规诉求**：全球 Web3 监管正在从粗放向精细化审计演进。合规机构、司法鉴定机构与安全团队对链上恶意套利行为的追溯，已由“概率性推测”转向“确定性、可核验、具备完整事实链条的事后证据审计”。
 * **开源化趋势**：区块链技术天生具备开源透明属性，但安全检测与攻击重现工具长期被商业公司中心化垄断，缺乏透明、可复现的开源工业级评测基准。
 
-### 2. 看市场 / 客户（Market & Customers）
+#### 2. 看市场 / 客户（Market & Customers）
 * **主要使用者群体**：
   1. **高校与科研机构**：从事区块链系统安全、计算金融学研究的学者和研究生，需要无成本、标准化、可验证的离线实验基准；
   2. **中小型安全审计团队**：需要低算力成本、可嵌入现有 CI/CD 安全扫描流水线的攻击检测组件；
@@ -20,7 +86,7 @@
   - 依赖昂贵的以太坊归档节点（Archive Node / Trace RPC），单个查询成本高昂；
   - 现有商业平台（如部分中心化分析看板）为黑盒逻辑，判定规则不透明，无法作为司法或学术层面的确定性证据。
 
-### 3. 看竞争（Competition）
+#### 3. 看竞争（Competition）
 客观对标当前行业主流方案，确立差异化生态定位：
 
 | 维度 | Flashbots (Protect) | EigenPhi / TokenFlow | 本项目 (SandwichTrace-Core_38) |
@@ -30,7 +96,7 @@
 | **开源程度** | 部分核心闭源或高度商业绑定 | 闭源商业化产品 | **100% 开源（Apache-2.0 许可）** |
 | **竞争策略** | 不与其在全网抢跑与算力垄断上硬碰硬 | 避开全网高并发数据存储与网页展示 | **聚焦于“轻量、可嵌入、规范化数据契约”的开源基准库** |
 
-### 4. 看自己（Self）
+#### 4. 看自己（Self）
 * **核心优势（S）**：
   - **轻量可复现**：剥离重型 RPC 与数据库依赖，可直接离线回放标准化 Fixtures；
   - **架构解耦**：采用严格的六层单向依赖架构，算法层（Core）与数据层（Dataset）完全正交；
@@ -39,15 +105,13 @@
   - 当前 MVP 仅支持单池、单跳、同 EOA 的经典三联体，暂不支持多池路由（Multi-hop）与多地址协同攻击；
   - 仅支持事后离线分析，不具备实时网络层防御能力。
 
-### 5. 看机会（Opportunities）
+#### 5. 看机会（Opportunities）
 * **生态机会**：开源社区仍缺少轻量、可复现、拥有明确数据契约和离线评测集的三明治攻击检测工具。
 * **集成机会**：可作为底层 Core 库，无缝嵌入以太坊分析框架、量化交易回测框架及学术仿真环境。
 
----
+### 二、 战略制定（三定）
 
-## 二、 战略制定
-
-### 1. 定战略控制点（Strategic Control Points）
+#### 1. 定战略控制点（Strategic Control Points）
 > 战略控制点是不易被竞争对手在短期内模仿的核心能力。在开源软件中，“公式与简单判定逻辑”无法形成壁垒，必须将控制点建立在标准与数据集上。
 
 * **控制点一：高质量多场景标注基准集（Benchmark Dataset）**
@@ -55,9 +119,9 @@
 * **控制点二：确定性可追溯证据链规范（Evidence Contract Specification）**
   制定严格的 Block $\to$ Tx $\to$ Receipt $\to$ Event Log $\to$ Trace 分层证据关联与毛收益信号计算口径，形成标准规范。
 
-### 2. 定目标（Goals）
+#### 2. 定目标（Goals）
 
-```
+```text
                   ┌──────────────────────────────────────────────┐
                   │ 长期目标 (Year 2+)                           │
                   │ 演进为完整链上全栈审计平台                   │
@@ -73,11 +137,11 @@
                   ┌───────────────────────┴──────────────────────┐
                   │ 短期目标 (当前 MVP)                          │
                   │ 45 个离线测试通过，9 个 Fixtures 可完整回放   │
-                  │ 六层架构、CLI 与文档体系形成闭环             │
+                  │ 六层架构、CLI 与双语文档体系形成闭环         │
                   └──────────────────────────────────────────────┘
 ```
 
-### 3. 定策略（Strategies）
+#### 3. 定策略（Strategies）
 
 * **策略 1：测试驱动开发与严格隔离（TDD & Architecture Isolation）**
   坚持算法 Core 不依赖任何外部 I/O 与测试标注，保证判定逻辑的纯粹性与高可测性。
