@@ -64,11 +64,11 @@ python -m pytest
 
 | Document | Primary Focus | Boundary / Scope |
 | :--- | :--- | :--- |
-| [`docs/01_DESIGN_BACKGROUND.md`](./docs/01_DESIGN_BACKGROUND.md) | **Design Background**: Motivation, problem formulation, and core value | Current Core Spec |
-| [`docs/02_ARCHITECTURE.md`](./docs/02_ARCHITECTURE.md) | **Architecture**: 6-layer decoupled system layout, responsibilities, and data flow | Current Core Spec |
-| [`docs/03_SCOPE_AND_BOUNDARIES.md`](./docs/03_SCOPE_AND_BOUNDARIES.md) | **Scope & Boundaries**: MVP supported features vs. deferred roadmap boundaries | Current Core Spec |
-| [`docs/04_DATA_CONTRACTS.md`](./docs/04_DATA_CONTRACTS.md) | **Data Contracts**: Pydantic schema models, field constraints, and structures | Current Core Spec |
-| [`docs/05_DETECTION_RULES.md`](./docs/05_DETECTION_RULES.md) | **Detection Rules**: 9 core criteria, profit calculation, and benchmark metrics | Current Core Spec |
+| [`docs/en/01_DESIGN_BACKGROUND.md`](./docs/en/01_DESIGN_BACKGROUND.md) | **Design Background**: Motivation, problem formulation, and core value | Current Core Spec |
+| [`docs/en/02_ARCHITECTURE.md`](./docs/en/02_ARCHITECTURE.md) | **Architecture**: 6-layer decoupled system layout, responsibilities, and data flow | Current Core Spec |
+| [`docs/en/03_SCOPE_AND_BOUNDARIES.md`](./docs/en/03_SCOPE_AND_BOUNDARIES.md) | **Scope & Boundaries**: MVP supported features vs. deferred roadmap boundaries | Current Core Spec |
+| [`docs/en/04_DATA_CONTRACTS.md`](./docs/en/04_DATA_CONTRACTS.md) | **Data Contracts**: Pydantic schema models, field constraints, and structures | Current Core Spec |
+| [`docs/en/05_DETECTION_RULES.md`](./docs/en/05_DETECTION_RULES.md) | **Detection Rules**: 9 core criteria, profit calculation, and benchmark metrics | Current Core Spec |
 | [`STRATEGIC_ANALYSIS.md`](./STRATEGIC_ANALYSIS.md) | **Strategic Analysis**: Project positioning, competitive boundaries, and roadmap | Project Roadmap |
 
 ---
