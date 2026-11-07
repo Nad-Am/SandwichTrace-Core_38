@@ -1,5 +1,7 @@
 # 2. ARCHITECTURE.md —— 架构设计
 
+> [English](../en/02_ARCHITECTURE.md) | **????**
+
 ## 2.1 架构定位
 
 SandwichTrace-Core_38 采用分层模块化架构，核心检测逻辑与数据加载、命令行交互、评测流程解耦。

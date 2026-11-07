@@ -1,5 +1,7 @@
 # 3. SCOPE_AND_BOUNDARIES.md —— 范围与边界控制
 
+> [English](../en/03_SCOPE_AND_BOUNDARIES.md) | **????**
+
 ## 3.1 当前 MVP 范围
 
 | 维度 | 当前支持 |

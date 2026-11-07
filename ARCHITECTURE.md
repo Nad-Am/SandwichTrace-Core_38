@@ -16,5 +16,5 @@ The implementation follows these dependency rules:
 - `evaluation/` uses only `DetectionService.detect(input)` for predictions.
 - `DetectionResult.matches` supports zero, one or multiple `SandwichMatch` objects.
 
-See [docs/02_ARCHITECTURE.md](docs/02_ARCHITECTURE.md) for the detailed design.
+See [docs/zh-CN/02_ARCHITECTURE.md](docs/zh-CN/02_ARCHITECTURE.md) for the detailed design.
 

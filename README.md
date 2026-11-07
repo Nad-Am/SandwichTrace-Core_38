@@ -64,11 +64,11 @@ python -m pytest
 
 | Document | Primary Focus | Boundary / Scope |
 | :--- | :--- | :--- |
-| [`docs/01_DESIGN_BACKGROUND.md`](./docs/01_DESIGN_BACKGROUND.md) | **Design Background**: Motivation, problem formulation, and core value | Current Core Spec |
-| [`docs/02_ARCHITECTURE.md`](./docs/02_ARCHITECTURE.md) | **Architecture**: 6-layer decoupled system layout, responsibilities, and data flow | Current Core Spec |
-| [`docs/03_SCOPE_AND_BOUNDARIES.md`](./docs/03_SCOPE_AND_BOUNDARIES.md) | **Scope & Boundaries**: MVP supported features vs. deferred roadmap boundaries | Current Core Spec |
-| [`docs/04_DATA_CONTRACTS.md`](./docs/04_DATA_CONTRACTS.md) | **Data Contracts**: Pydantic schema models, field constraints, and structures | Current Core Spec |
-| [`docs/05_DETECTION_RULES.md`](./docs/05_DETECTION_RULES.md) | **Detection Rules**: 9 core criteria, profit calculation, and benchmark metrics | Current Core Spec |
+| [`docs/zh-CN/01_DESIGN_BACKGROUND.md`](./docs/zh-CN/01_DESIGN_BACKGROUND.md) | **Design Background**: Motivation, problem formulation, and core value | Current Core Spec |
+| [`docs/zh-CN/02_ARCHITECTURE.md`](./docs/zh-CN/02_ARCHITECTURE.md) | **Architecture**: 6-layer decoupled system layout, responsibilities, and data flow | Current Core Spec |
+| [`docs/zh-CN/03_SCOPE_AND_BOUNDARIES.md`](./docs/zh-CN/03_SCOPE_AND_BOUNDARIES.md) | **Scope & Boundaries**: MVP supported features vs. deferred roadmap boundaries | Current Core Spec |
+| [`docs/zh-CN/04_DATA_CONTRACTS.md`](./docs/zh-CN/04_DATA_CONTRACTS.md) | **Data Contracts**: Pydantic schema models, field constraints, and structures | Current Core Spec |
+| [`docs/zh-CN/05_DETECTION_RULES.md`](./docs/zh-CN/05_DETECTION_RULES.md) | **Detection Rules**: 9 core criteria, profit calculation, and benchmark metrics | Current Core Spec |
 | [`STRATEGIC_ANALYSIS.md`](./STRATEGIC_ANALYSIS.md) | **Strategic Analysis**: Project positioning, competitive boundaries, and roadmap | Project Roadmap |
 
 ---
@@ -131,11 +131,11 @@ python -m pytest
 
 | 文档 | 核心定位与主要解决的问题 | 边界与归属 |
 | :--- | :--- | :--- |
-| [`docs/01_DESIGN_BACKGROUND.md`](./docs/01_DESIGN_BACKGROUND.md) | **设计背景**：为什么做该项目？问题定义、核心目标与应用价值 | 当前 Core 规格 |
-| [`docs/02_ARCHITECTURE.md`](./docs/02_ARCHITECTURE.md) | **架构设计**：系统整体如何组织？六层分层架构、模块单一职责与数据流 | 当前 Core 规格 |
-| [`docs/03_SCOPE_AND_BOUNDARIES.md`](./docs/03_SCOPE_AND_BOUNDARIES.md) | **范围与边界**：当前 MVP 做什么、不做什么？与后续全栈演进的刚性边界隔离 | 当前 Core 规格 |
-| [`docs/04_DATA_CONTRACTS.md`](./docs/04_DATA_CONTRACTS.md) | **数据契约**：模块间传递什么数据？强类型 Pydantic 模型与字段约束 | 当前 Core 规格 |
-| [`docs/05_DETECTION_RULES.md`](./docs/05_DETECTION_RULES.md) | **检测规则**：如何判定攻击？9 项核心条件、毛收益信号口径与评测标准 | 当前 Core 规格 |
+| [`docs/zh-CN/01_DESIGN_BACKGROUND.md`](./docs/zh-CN/01_DESIGN_BACKGROUND.md) | **设计背景**：为什么做该项目？问题定义、核心目标与应用价值 | 当前 Core 规格 |
+| [`docs/zh-CN/02_ARCHITECTURE.md`](./docs/zh-CN/02_ARCHITECTURE.md) | **架构设计**：系统整体如何组织？六层分层架构、模块单一职责与数据流 | 当前 Core 规格 |
+| [`docs/zh-CN/03_SCOPE_AND_BOUNDARIES.md`](./docs/zh-CN/03_SCOPE_AND_BOUNDARIES.md) | **范围与边界**：当前 MVP 做什么、不做什么？与后续全栈演进的刚性边界隔离 | 当前 Core 规格 |
+| [`docs/zh-CN/04_DATA_CONTRACTS.md`](./docs/zh-CN/04_DATA_CONTRACTS.md) | **数据契约**：模块间传递什么数据？强类型 Pydantic 模型与字段约束 | 当前 Core 规格 |
+| [`docs/zh-CN/05_DETECTION_RULES.md`](./docs/zh-CN/05_DETECTION_RULES.md) | **检测规则**：如何判定攻击？9 项核心条件、毛收益信号口径与评测标准 | 当前 Core 规格 |
 | [`STRATEGIC_ANALYSIS.md`](./STRATEGIC_ANALYSIS.md) | **项目战略分析**：行业洞察、竞争壁垒、战略控制点与演进路线 | 项目发展规划 |
 
 ---
