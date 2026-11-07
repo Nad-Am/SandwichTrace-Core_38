@@ -1,5 +1,7 @@
 # 1. DESIGN_BACKGROUND.md —— 设计背景
 
+> [English](../en/01_DESIGN_BACKGROUND.md) | **????**
+
 ## 1.1 项目背景
 
 随着 Ethereum 生态中去中心化交易所（DEX）的发展，自动做市商（AMM）机制成为链上资产交易的重要基础设施。

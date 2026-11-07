@@ -1,5 +1,7 @@
 # 5. DETECTION_RULES.md —— 检测规则
 
+> [English](../en/05_DETECTION_RULES.md) | **????**
+
 ## 5.1 典型攻击模式
 
 ```
